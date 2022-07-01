@@ -33,7 +33,7 @@ public class OrganizationServlet extends HttpServlet {
 
         GsonBuilder gsonBuilder = new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateSerializer());
         Gson gson = gsonBuilder.setPrettyPrinting().create();
-        String organizationJsonString = gson.toJson(organizations);
+        String organizationJsonString = gson.toJson(organizations.values());
 
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
